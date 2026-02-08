@@ -1,0 +1,137 @@
+.audio-player-container {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 1000;
+    padding: 0.8rem 1.2rem;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: default;
+    transition: all 0.5s var(--transition-zenith);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.audio-player-container:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.audio-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    padding: 0;
+}
+
+.audio-btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Visualizer Bars */
+.visualizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 14px;
+}
+
+.bar {
+    width: 3px;
+    background: currentColor;
+    border-radius: 2px;
+    height: 4px;
+}
+
+.playing .bar {
+    animation: bounce 0.6s infinite ease-in-out alternate;
+}
+
+.playing .bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.playing .bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.playing .bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+    from {
+        height: 4px;
+    }
+
+    to {
+        height: 14px;
+    }
+}
+
+.audio-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.now-playing {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.audio-status {
+    font-size: 0.55rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.mute-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    padding: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mute-btn:hover {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .audio-player-container {
+        bottom: 1.5rem;
+        left: 1.5rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .audio-info {
+        display: none;
+    }
+}

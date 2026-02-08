@@ -7,6 +7,8 @@ import Skills from './components/Skills/Skills';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 
+import AudioPlayer from './components/AudioPlayer/AudioPlayer';
+
 function App() {
   const scrollRef = React.useRef(null);
 
@@ -17,6 +19,7 @@ function App() {
   return (
     <div className="app">
       <Navbar />
+      <AudioPlayer />
       <div className="horizontal-container" ref={scrollRef}>
         <Hero />
         <Experience />
