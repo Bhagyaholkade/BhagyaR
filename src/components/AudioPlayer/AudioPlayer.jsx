@@ -33,7 +33,7 @@ const AudioPlayer = () => {
         <div className="audio-player-container nebula-glass">
             <audio
                 ref={audioRef}
-                src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3"
+                src="https://www.chosic.com/wp-content/uploads/2021/04/Relaxing-piano-music-no-copyright.mp3"
                 loop
             />
 
@@ -52,7 +52,7 @@ const AudioPlayer = () => {
                 </button>
 
                 <div className="audio-info">
-                    <span className="now-playing">Ambient Zenith</span>
+                    <span className="now-playing">Peaceful Zen Piano</span>
                     <span className="audio-status">{isPlaying ? 'Playing' : 'Paused'}</span>
                 </div>
 
