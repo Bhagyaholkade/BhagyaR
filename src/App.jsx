@@ -8,6 +8,7 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 
 import AudioPlayer from './components/AudioPlayer/AudioPlayer';
+import CustomCursor from './components/CustomCursor/CustomCursor';
 
 function App() {
   const scrollRef = React.useRef(null);
@@ -20,6 +21,7 @@ function App() {
     <div className="app">
       <Navbar />
       <AudioPlayer />
+      <CustomCursor />
       <div className="horizontal-container" ref={scrollRef}>
         <Hero />
         <Experience />

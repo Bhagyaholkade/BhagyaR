@@ -22,12 +22,28 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.2;
+  font-family: var(--font-main);
   overflow-x: hidden;
+  cursor: none;
+}
+
+a,
+button,
+[role="button"],
+.project-card,
+.magnetic-next-scroller {
+  cursor: none !important;
+}
+
+body {
+  line-height: 1.2;
   overflow-y: auto;
   /* Restored for internal section scrolling */
   -webkit-font-smoothing: antialiased;

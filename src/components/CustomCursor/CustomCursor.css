@@ -1,0 +1,63 @@
+.custom-cursor-dot {
+    position: fixed;
+    top: -6px;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-cursor-follower {
+    position: fixed;
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.inner-ring {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Hover States */
+.custom-cursor-dot.hover {
+    width: 8px;
+    height: 8px;
+    background: rgba(147, 51, 234, 0.8);
+    /* Accent purple */
+}
+
+.custom-cursor-follower.hover .inner-ring {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(147, 51, 234, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+/* Hidden States */
+.custom-cursor-dot.hidden,
+.custom-cursor-follower.hidden {
+    opacity: 0;
+}
+
+/* Performance optimizations */
+.custom-cursor-dot,
+.custom-cursor-follower {
+    will-change: transform;
+    backface-visibility: hidden;
+}
