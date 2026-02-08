@@ -55,10 +55,10 @@ const Navbar = () => {
                     <div className="menu-links">
                         {[
                             { label: "Home", sub: "01", index: 0 },
-                            { label: "Experience", sub: "02", index: 1 },
-                            { label: "Projects", sub: "03", index: 2 },
-                            { label: "Skills", sub: "04", index: 3 },
-                            { label: "About", sub: "05", index: 4 },
+                            { label: "About", sub: "02", index: 1 },
+                            { label: "Experience", sub: "03", index: 2 },
+                            { label: "Projects", sub: "04", index: 3 },
+                            { label: "Skills", sub: "05", index: 4 },
                             { label: "Contact", sub: "06", index: 5 }
                         ].map((item, i) => (
                             <div
