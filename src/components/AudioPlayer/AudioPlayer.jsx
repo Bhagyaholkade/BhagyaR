@@ -6,26 +6,35 @@ const AudioPlayer = () => {
     const [isMuted, setIsMuted] = useState(false);
     const audioRef = useRef(null);
 
-    const togglePlay = () => {
+    const togglePlay = async () => {
+        if (!audioRef.current) return;
         if (isPlaying) {
             audioRef.current.pause();
+            setIsPlaying(false);
         } else {
-            audioRef.current.play().catch(err => {
-                console.error("Autoplay blocked or error:", err);
-            });
+            try {
+                await audioRef.current.play();
+                setIsPlaying(true);
+            } catch (err) {
+                console.error("Audio playback failed:", err);
+            }
         }
-        setIsPlaying(!isPlaying);
     };
 
     const toggleMute = () => {
-        audioRef.current.muted = !isMuted;
-        setIsMuted(!isMuted);
+        if (audioRef.current) {
+            audioRef.current.muted = !isMuted;
+            setIsMuted(!isMuted);
+        }
+    };
+
+    const handleAudioError = (e) => {
+        console.error("Audio Source Error:", e);
     };
 
     useEffect(() => {
-        // Initial setup for volume
         if (audioRef.current) {
-            audioRef.current.volume = 0.4;
+            audioRef.current.volume = 0.5;
         }
     }, []);
 
