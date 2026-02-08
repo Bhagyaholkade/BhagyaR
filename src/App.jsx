@@ -24,10 +24,10 @@ function App() {
       <CustomCursor />
       <div className="horizontal-container" ref={scrollRef}>
         <Hero />
+        <About />
         <Experience />
         <Projects />
         <Skills />
-        <About />
         <Contact />
       </div>
     </div>
