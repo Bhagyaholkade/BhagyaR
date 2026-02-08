@@ -1,0 +1,204 @@
+:root {
+  /* Color Palette - Studio Zenith Luxury */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0c;
+  --accent-primary: #ffffff;
+  --accent-zenith: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.4);
+
+  /* Zenith Typography */
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Syne', sans-serif;
+  --text-massive: clamp(4rem, 15vw, 18rem);
+
+  /* Transitions */
+  --transition-zenith: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.2;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Restored for internal section scrolling */
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.horizontal-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide Scrollbar but allow functionality */
+.horizontal-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Utility Classes */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+.liquid-core {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.liquid-core::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(at 10% 10%, rgba(255, 255, 255, 0.02) 0px, transparent 40%),
+    radial-gradient(at 90% 90%, rgba(255, 255, 255, 0.02) 0px, transparent 40%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1.2s var(--transition-zenith) forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 1.2s var(--transition-zenith) forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes rainbow-glow {
+  0% {
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+  }
+
+  17% {
+    border-color: #ff8800;
+    box-shadow: 0 0 20px rgba(255, 136, 0, 0.2);
+  }
+
+  33% {
+    border-color: #ffff00;
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.2);
+  }
+
+  50% {
+    border-color: #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  }
+
+  67% {
+    border-color: #0088ff;
+    box-shadow: 0 0 20px rgba(0, 136, 255, 0.2);
+  }
+
+  83% {
+    border-color: #8800ff;
+    box-shadow: 0 0 20px rgba(136, 0, 255, 0.2);
+  }
+
+  100% {
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+  }
+}

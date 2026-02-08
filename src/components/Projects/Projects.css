@@ -1,0 +1,278 @@
+.projects {
+    min-width: 100%;
+    min-height: 100vh;
+    padding: 120px 4rem 100px;
+    position: relative;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #020202;
+}
+
+/* Background Decorations */
+.projects-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.05) 0%, transparent 70%);
+    filter: blur(80px);
+    border-radius: 50%;
+    animation: blobFloat 20s infinite alternate;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.05) 0%, transparent 70%);
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    top: 40%;
+    left: 60%;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.03) 0%, transparent 70%);
+    animation-delay: -10s;
+}
+
+@keyframes blobFloat {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(100px, 50px) scale(1.1);
+    }
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 10;
+}
+
+.section-subtitle {
+    font-size: 0.8rem;
+    color: var(--accent-secondary, #9333ea);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.projects .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 3.5vw, 1.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    background: linear-gradient(to right, #fff, #999);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Nebula Glass Card */
+.nebula-glass {
+    position: relative;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(20px);
+}
+
+.nebula-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent, rgba(255, 255, 255, 0.03));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 0;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.15) rotate(1deg);
+}
+
+.project-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+}
+
+.view-btn {
+    padding: 1rem 2rem;
+    background: #fff;
+    color: #000;
+    border-radius: 100px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+}
+
+.view-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 1.8rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.tag {
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.6rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .tag {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.project-category {
+    font-size: 0.7rem;
+    color: var(--accent-secondary, #9333ea);
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.01em;
+    font-family: var(--font-heading);
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.5;
+}
+
+.projects-footer {
+    margin-top: 6rem;
+}
+
+.glass-btn {
+    padding: 1.2rem 3rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 100px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+.glass-btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-5px);
+}
+
+@media (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding: 80px 2rem 60px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-info {
+        padding: 1.5rem;
+    }
+}

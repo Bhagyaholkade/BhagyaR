@@ -1,0 +1,169 @@
+.skills-page {
+    min-width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding: 6rem 0;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-align: start;
+    background: var(--bg-primary);
+}
+
+.skills-page .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.skills-page .section-header {
+    margin-bottom: 3rem;
+}
+
+/* Molten Gold Text Effect */
+.molten-text {
+    background: linear-gradient(135deg, #fff 0%, #ffd700 25%, #fff 50%, #b8860b 75%, #fff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: molten 6s linear infinite;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes molten {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.skill-group {
+    padding: 3.5rem;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    transition: var(--transition-zenith);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-group:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-15px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+}
+
+.skill-category {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position: relative;
+    z-index: 2;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.skill-tag {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.skill-tag:hover {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Premium Effects */
+.stat-icon-blob {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+    filter: blur(20px);
+    transition: all 0.8s ease;
+    z-index: 1;
+}
+
+.skill-group:hover .stat-icon-blob {
+    transform: scale(2.5);
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
+}
+
+.card-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.05),
+            transparent);
+    transform: skewX(-20deg);
+    transition: 0.8s;
+    z-index: 3;
+}
+
+.skill-group:hover .card-shine {
+    left: 150%;
+}
+
+@media (max-width: 1024px) {
+    .skills-bg-text {
+        font-size: 10rem;
+    }
+
+    .skills-page .container {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-page {
+        padding: 6rem 0;
+    }
+
+    .skills-bg-text {
+        font-size: 6rem;
+    }
+
+    .skill-group {
+        padding: 2.5rem;
+    }
+}
