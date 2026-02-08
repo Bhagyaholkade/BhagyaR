@@ -6,43 +6,34 @@ const AudioPlayer = () => {
     const [isMuted, setIsMuted] = useState(false);
     const audioRef = useRef(null);
 
-    const togglePlay = async () => {
+    const togglePlay = () => {
         if (isPlaying) {
             audioRef.current.pause();
-            setIsPlaying(false);
         } else {
-            try {
-                await audioRef.current.play();
-                setIsPlaying(true);
-            } catch (err) {
-                console.error("Audio playback failed:", err);
-                alert("Playback prevented by browser. Please interact with the page first.");
-            }
+            audioRef.current.play().catch(err => {
+                console.error("Autoplay blocked or error:", err);
+            });
         }
+        setIsPlaying(!isPlaying);
     };
 
     const toggleMute = () => {
-        if (audioRef.current) {
-            audioRef.current.muted = !isMuted;
-            setIsMuted(!isMuted);
-        }
+        audioRef.current.muted = !isMuted;
+        setIsMuted(!isMuted);
     };
 
     useEffect(() => {
+        // Initial setup for volume
         if (audioRef.current) {
-            audioRef.current.volume = 0.5;
+            audioRef.current.volume = 0.4;
         }
     }, []);
-
-    const handleAudioError = (e) => {
-        console.error("Audio Source Error:", e);
-    };
 
     return (
         <div className="audio-player-container nebula-glass">
             <audio
                 ref={audioRef}
-                src="https://cdn.pixabay.com/audio/2022/02/22/audio_d0c6ff1bab.mp3"
+                src="https://mixkit.imgix.net/mixkit-deep-urban-623.mp3"
                 loop
                 onError={handleAudioError}
             />
@@ -62,10 +53,9 @@ const AudioPlayer = () => {
                 </button>
 
                 <div className="audio-info">
-                    <span className="now-playing">Peaceful Zen — Piano</span>
+                    <span className="now-playing">Deep Urban — Tech</span>
                     <span className="audio-status">{isPlaying ? 'Playing' : 'Paused'}</span>
                 </div>
-
 
                 <button
                     className="mute-btn"
