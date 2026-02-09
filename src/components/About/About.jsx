@@ -54,7 +54,7 @@ const About = () => {
                             </div>
                             <p className="about-description">
                                 I'm <strong>Bhagya</strong>, a passionate Software Developer and Data Analytics enthusiast based in Bangalore.
-                                As a Software Developer with 7+ months of professional experience and a B.E. in Information Science Engineering, I specialize in building innovative,
+                                As a Software Developer with 7+ months of internship experience and a B.E. in Information Science Engineering, I specialize in building innovative,
                                 user-centric applications that solve real-world problems.
                             </p>
                             <p className="about-description">
@@ -65,7 +65,7 @@ const About = () => {
                                 <div className="stat-item glass-premium">
                                     <div className="stat-icon-blob"></div>
                                     <span className="stat-number">7+</span>
-                                    <span className="stat-label">Months Experience</span>
+                                    <span className="stat-label">Months Internship</span>
                                 </div>
                                 <div className="stat-item glass-premium">
                                     <div className="stat-icon-blob"></div>

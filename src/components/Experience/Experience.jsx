@@ -7,7 +7,7 @@ const Experience = () => {
             <div className="container">
                 <div className="section-header">
                     <span className="section-subtitle">Career Journey</span>
-                    <h2 className="section-title">Professional <br />Experience.</h2>
+                    <h2 className="section-title">Internship <br />Experience.</h2>
                 </div>
 
                 <div className="experience-timeline">
@@ -15,7 +15,7 @@ const Experience = () => {
                         <div className="exp-header">
                             <div>
                                 <h3 className="exp-role">AI Full Stack Developer</h3>
-                                <p className="exp-company">Salesence</p>
+                                <p className="exp-company"><a href="https://www.gosalesence.com/" target="_blank" rel="noopener noreferrer">Salesence</a></p>
                             </div>
                             <span className="exp-date">Jul '25 — Present</span>
                         </div>

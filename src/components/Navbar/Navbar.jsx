@@ -74,9 +74,9 @@ const Navbar = () => {
                     </div>
                     <div className="menu-footer">
                         <div className="social-links">
-                            <span>LINKEDIN</span>
-                            <span>GITHUB</span>
-                            <span>TWITTER</span>
+                            <a href="https://www.linkedin.com/in/bhagya-holkade/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+                            <a href="https://github.com/Bhagyaholkade" target="_blank" rel="noopener noreferrer">GITHUB</a>
+                            <a href="mailto:holkadebhagya@gmail.com">EMAIL</a>
                         </div>
                         <div className="menu-meta">
                             <span>BHAGYA — 2026 EDITION</span>

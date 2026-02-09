@@ -31,7 +31,7 @@ const Hero = () => {
                 <h1 className="zenith-massive-title animate-slide-up">
                     <div className="title-row">SOFTWARE</div>
                     <div className="title-row outline">DEVELOPER.</div>
-                    <div className="title-row">DATA ANALYTICS</div>
+                    <div className="title-row">DATA ANALYST</div>
                 </h1>
 
                 <div className="zenith-meta-bottom animate-fade-in delay-2">

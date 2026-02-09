@@ -10,10 +10,17 @@
   /* Zenith Typography */
   --font-main: 'Inter', sans-serif;
   --font-heading: 'Syne', sans-serif;
-  --text-massive: clamp(4rem, 15vw, 18rem);
+  --text-massive: clamp(2.5rem, 15vw, 15rem);
+  --section-padding: 8rem 4rem;
 
   /* Transitions */
   --transition-zenith: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3rem 1.5rem;
+  }
 }
 
 * {
@@ -45,9 +52,25 @@ button,
 body {
   line-height: 1.2;
   overflow-y: auto;
-  /* Restored for internal section scrolling */
   -webkit-font-smoothing: antialiased;
   position: relative;
+}
+
+/* Touch devices: restore normal cursor and disable custom scroller logic if any */
+@media (pointer: coarse) {
+
+  html,
+  body {
+    cursor: auto !important;
+  }
+
+  a,
+  button,
+  [role="button"],
+  .project-card,
+  .magnetic-next-scroller {
+    cursor: auto !important;
+  }
 }
 
 body::before {
@@ -71,10 +94,23 @@ body::before {
   -webkit-overflow-scrolling: touch;
 }
 
+@media (max-width: 1024px) {
+  .horizontal-container {
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 /* Hide Scrollbar but allow functionality */
 .horizontal-container::-webkit-scrollbar {
   display: none;
 }
+
 
 
 #root {
@@ -108,16 +144,17 @@ body::before {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 4rem;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 }
+
 
 .liquid-core {
   position: relative;

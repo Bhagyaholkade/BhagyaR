@@ -24,7 +24,7 @@ const Contact = () => {
                             <div className="contact-footer-line">
                                 <a href="https://www.linkedin.com/in/bhagya-holkade/" target="_blank" rel="noopener noreferrer" className="social-link-zenith">LINKEDIN</a>
                                 <a href="https://github.com/Bhagyaholkade" target="_blank" rel="noopener noreferrer" className="social-link-zenith">GITHUB</a>
-                                <span className="footer-email">holkadebhagya@gmail.com</span>
+                                <a href="mailto:holkadebhagya@gmail.com" className="social-link-zenith">EMAIL</a>
                             </div>
                         </div>
                     </div>
